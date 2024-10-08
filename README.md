@@ -23,11 +23,11 @@ poetry config virtualenvs.in-project true
 - Install Required Dependency
 
 ```sh
-poetry install
+poetry install --no-root
 ```
 
 - Run project
 
 ```sh
-poetry run python -m gunicorn --log-level=info runner:app
+poetry run python -m gunicorn --log-level=info --bind 127.0.0.1:8001 runner:app
 ```
